@@ -15,10 +15,19 @@ body {
   background-color: lightgreen;
   position: absolute;
   left: 50%;
-  top: 40%;
+  top: 30%;
   transform: translate(-50%);
 }
 .start-screen:hover {
   background-color: green;
   cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+.game-screen {
+  width: 100%;
+  height: 100%;
+  background-color: aqua;
 }
