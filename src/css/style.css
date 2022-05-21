@@ -23,11 +23,25 @@ body {
   cursor: pointer;
 }
 
-.hidden {
-  display: none;
-}
 .game-screen {
   width: 100%;
   height: 100%;
   background-color: aquamarine;
+}
+
+.wizard {
+  position: absolute;
+  background-image: url('/src/images/wizard.png');
+  background-size: cover;
+  top: 100px;
+  left: 100px;
+  width: 82px;
+  height: 100px;
+  z-index: 10;
+  
+  
+}
+
+.hidden {
+  display: none;
 }
