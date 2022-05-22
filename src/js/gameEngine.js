@@ -5,6 +5,6 @@ function start(state, game) {
 }
 
 function gameLoop(state, game) {
-   
+
     window.requestAnimationFrame(gameLoop.bind(null, state, game));
 }

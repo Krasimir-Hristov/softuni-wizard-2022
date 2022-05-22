@@ -7,7 +7,9 @@ function initState() {
             startX: Math.floor(Math.random() * 1000),
             startY:Math.floor(Math.random() * 500),
 
-        }
+        },
+        keys: {}
+        
     }
 
     return state;
