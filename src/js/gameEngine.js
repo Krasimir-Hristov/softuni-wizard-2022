@@ -32,7 +32,11 @@ function gameLoop(state, game, timestamp) {
         state.bugStats.nextSpawnTimestamp = timestamp + Math.random() * state.bugStats.maxSpawnInterval
     }
 
-    
+   // Spawn clouds
+    if (timestamp > state.cloudStats.nextSpawnTimestamp) {
+        game.createClouds(state.cloudStats);
+        state.cloudStats.nextSpawnTimestamp = timestamp + Math.random() * state.cloudStats.maxSpawnInterval
+    }
 
 
     // Render bugs
@@ -49,6 +53,20 @@ function gameLoop(state, game, timestamp) {
             bug.style.left = posX - state.bugStats.speed + 'px';
         } else {
             bug.remove();
+        }
+    });
+
+    // Render clouds
+    let cloudElements =document.querySelectorAll('.cloud');
+    cloudElements.forEach(cloud => {
+        let posX = parseInt(cloud.style.left);
+
+       
+
+        if (posX > 0) {
+            cloud.style.left = posX - state.cloudStats.speed + 'px';
+        } else {
+            cloud.remove();
         }
     });
 

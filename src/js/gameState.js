@@ -24,9 +24,17 @@ function initState() {
             speed: 10,
         },
 
+        cloudStats: {
+            width: 100,
+            height: 100,
+            nextSpawnTimestamp: 0,
+            maxSpawnInterval: 2500,
+            speed: 5,
+        },
+
         fireball: {
-            width: 20,
-            height: 20,
+            width: 30,
+            height: 30,
             speed: 12,
             nextSpawnTimestamp: 0,
             fireRate: 500,

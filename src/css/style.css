@@ -49,6 +49,13 @@ body {
   background-size: cover;
 }
 
+.cloud {
+  position: absolute;
+  background-image: url("/src/images/cloud.png");
+  background-size: cover;
+}
+
+
 .fireball {
   position: absolute;
   background-image: url("/src/images/fire-ball.png");

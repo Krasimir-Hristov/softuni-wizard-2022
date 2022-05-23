@@ -26,7 +26,7 @@ game.startScreen.addEventListener('click', (e) => {
     game.gameScreen.classList.remove('hidden');
 
      // Start game
-    start(state, game)
+    start(state, game);
 });
     
 
