@@ -1,6 +1,6 @@
 function start(state, game) {
     game.createWizard(state.wizard);
-
+    
     window.requestAnimationFrame(gameLoop.bind(null, state, game));
 }
 
@@ -96,7 +96,14 @@ function gameLoop(state, game, timestamp) {
     wizardElement.style.top = wizard.posY + 'px';
 
     if (state.gameOver) {
-        alert(`G A M E  O V E R !!! ==>> Your score is: ${state.score} !!!`);
+       // alert(`G A M E  O V E R !!! ==>> Your score is: ${state.score} !!!`);
+       
+       game.gameScreen.classList.add('hidden');
+        game.endScreen.classList.remove('hidden');
+    
+         // Start game
+        start(state, game);
+        
         
     } else {
         state.score += state.scoreRate;
