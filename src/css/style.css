@@ -43,12 +43,12 @@ body {
 .total-score {
   text-align: center;
   padding: 30px;
-  font-size: 35px;
+  font-size: 45px;
   width: 500px;
   background-color: rgb(245, 73, 58);
   position: absolute;
   left: 50%;
-  top: 0.5%;
+  top: 50%;
   transform: translate(-50%);
 }
 

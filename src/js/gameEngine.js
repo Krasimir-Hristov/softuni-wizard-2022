@@ -100,8 +100,11 @@ function gameLoop(state, game, timestamp) {
 
         game.totalScore.innerText = `Your score is: ${state.score} !`
         game.gameScreen.classList.add('hidden');
-        game.endScreen.classList.remove('hidden');
+        
         game.totalScore.classList.remove('hidden');
+        
+       
+       
 
     } else {
         state.score += state.scoreRate;
