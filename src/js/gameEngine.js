@@ -1,6 +1,6 @@
 function start(state, game) {
     game.createWizard(state.wizard);
-    
+
     window.requestAnimationFrame(gameLoop.bind(null, state, game));
 }
 
@@ -15,16 +15,16 @@ function gameLoop(state, game, timestamp) {
     if (state.keys.Space) {
         game.wizardElement.style.backgroundImage = 'url("/src/images/wizard-fire.png")';
 
-        if (timestamp > state.fireball.nextSpawnTimestamp){
+        if (timestamp > state.fireball.nextSpawnTimestamp) {
             game.createFireball(wizard, state.fireball);
-            state.fireball.nextSpawnTimestamp = timestamp +  state.fireball.fireRate;
+            state.fireball.nextSpawnTimestamp = timestamp + state.fireball.fireRate;
         }
-        
+
     } else {
         game.wizardElement.style.backgroundImage = 'url("/src/images/wizard.png")';
     }
 
-    
+
 
     //Spawn bugs
     if (timestamp > state.bugStats.nextSpawnTimestamp) {
@@ -32,7 +32,7 @@ function gameLoop(state, game, timestamp) {
         state.bugStats.nextSpawnTimestamp = timestamp + Math.random() * state.bugStats.maxSpawnInterval
     }
 
-   // Spawn clouds
+    // Spawn clouds
     if (timestamp > state.cloudStats.nextSpawnTimestamp) {
         game.createClouds(state.cloudStats);
         state.cloudStats.nextSpawnTimestamp = timestamp + Math.random() * state.cloudStats.maxSpawnInterval
@@ -40,7 +40,7 @@ function gameLoop(state, game, timestamp) {
 
 
     // Render bugs
-    let bugElements =document.querySelectorAll('.bug');
+    let bugElements = document.querySelectorAll('.bug');
     bugElements.forEach(bug => {
         let posX = parseInt(bug.style.left);
 
@@ -57,11 +57,11 @@ function gameLoop(state, game, timestamp) {
     });
 
     // Render clouds
-    let cloudElements =document.querySelectorAll('.cloud');
+    let cloudElements = document.querySelectorAll('.cloud');
     cloudElements.forEach(cloud => {
         let posX = parseInt(cloud.style.left);
 
-       
+
 
         if (posX > 0) {
             cloud.style.left = posX - state.cloudStats.speed + 'px';
@@ -83,12 +83,12 @@ function gameLoop(state, game, timestamp) {
             }
         })
 
-        if(posX > game.gameScreen.offsetWidth) {
+        if (posX > game.gameScreen.offsetWidth) {
             fireball.remove();
         } else {
             fireball.style.left = posX + state.fireball.speed + 'px';
         }
-        
+
     });
 
     // Render wizard
@@ -96,19 +96,21 @@ function gameLoop(state, game, timestamp) {
     wizardElement.style.top = wizard.posY + 'px';
 
     if (state.gameOver) {
-       // alert(`G A M E  O V E R !!! ==>> Your score is: ${state.score} !!!`);
-       
-       game.gameScreen.classList.add('hidden');
+
+
+        game.totalScore.innerText = `Your score is: ${state.score} !`
+        game.gameScreen.classList.add('hidden');
         game.endScreen.classList.remove('hidden');
-    
-         // Start game
-        start(state, game);
-        
-        
+        game.totalScore.classList.remove('hidden');
+
     } else {
         state.score += state.scoreRate;
-       window.requestAnimationFrame(gameLoop.bind(null, state, game));
+        window.requestAnimationFrame(gameLoop.bind(null, state, game));
     }
+
+
+
+
 
 
 

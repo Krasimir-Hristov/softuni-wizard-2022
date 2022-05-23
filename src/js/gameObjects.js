@@ -4,12 +4,14 @@ function initGameObjects() {
     const gameScreen = document.querySelector('.game-screen');
     const scoreScreen = document.querySelector('.score');
     const endScreen = document.querySelector('.end-screen');
+    const totalScore = document.querySelector('.total-score');
 
     return {
         startScreen,
         gameScreen,
         scoreScreen,
         endScreen,
+        totalScore,
         createWizard(initialState) {
             let wizardElement = document.createElement('div');
             wizardElement.classList.add('wizard');
