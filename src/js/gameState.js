@@ -33,8 +33,8 @@ function initState() {
         },
 
         fireball: {
-            width: 30,
-            height: 30,
+            width: 50,
+            height: 50,
             speed: 12,
             nextSpawnTimestamp: 0,
             fireRate: 500,
